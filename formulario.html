@@ -1,0 +1,67 @@
+<!--Prácticas-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario</title>
+    </head>
+    <body style="text-indent: 20px;">
+        <!--Menú-->
+        <h1>Formulario Primer Contacto de Tutoría</h1>
+        <!--método GET: lee todo lo que está en la barra de navegación, se ve todo (forma desprotegida)-->
+        <!--método POST: lee todo lo que se pone pero no se muestra (forma protegida)-->
+        <form action="mailto:liliana.gamez@upslp.edu.mx" method="post">
+            <p>Nombre: <input type="text" name="nombre" size="70"></p>
+            
+            <p>Matrícula: <input type="number" name="matricula" size="6" min="180000"></p>
+            
+            <p>Semestre: 
+                <input type="radio" name="semestre" value="1"> 1
+                <input type="radio" name="semestre" value="2"> 2
+                <input type="radio" name="semestre" value="3"> 3
+                <input type="radio" name="semestre" value="4"> 4
+                <input type="radio" name="semestre" value="5"> 5
+                <input type="radio" name="semestre" value="6"> 6
+                <input type="radio" name="semestre" value="7"> 7
+                <input type="radio" name="semestre" value="8"> 8
+                <input type="radio" name="semestre" value="9"> 9
+                <input type="radio" name="semestre" value="9+"> 9+
+            </p>
+
+            <p>Fecha: <input type="date" name="fecha"></p>
+
+            <p>Materia 1 Semestre Anterior: <input type="text" name="materia1" size="50"></p>
+            <p>Materia 2 Semestre Anterior: <input type="text" name="materia2" size="50"></p>
+            <p>Materia 3 Semestre Anterior: <input type="text" name="materia3" size="50"></p>
+            <p>Materia 4 Semestre Anterior: <input type="text" name="materia4" size="50"></p>
+            <p>Materia 5 Semestre Anterior: <input type="text" name="materia5" size="50"></p>        
+
+            <!--step te deja poner puntos decimales-->
+            <p>Calificación Final Materia 1 Semestre Anterior: <input type="number" name="cal1" min="0" max="10" step="0.1"></p>
+            <p>Calificación Final Materia 2 Semestre Anterior: <input type="number" name="cal2" min="0" max="10" step="0.1"></p>
+            <p>Calificación Final Materia 3 Semestre Anterior: <input type="number" name="cal3" min="0" max="10" step="0.1"></p>
+            <p>Calificación Final Materia 4 Semestre Anterior: <input type="number" name="cal4" min="0" max="10" step="0.1"></p>
+            <p>Calificación Final Materia 5 Semestre Anterior: <input type="number" name="cal5" min="0" max="10" step="0.1"></p>
+
+            <p>
+                ¿Cuál fue el motivo por el que reprobaste las materias (si aplica)
+                <br><br>
+                <textarea name="motivo" rows="4" cols="50" placeholder="Aquí tu comentario"></textarea>
+            </p>
+
+            <p>¿Cómo consideras tu rendimiento en general:
+                <select name="desem">
+                    <option></option>
+                    <option>Malo</option>
+                    <option>Regular</option>
+                    <option>Bueno</option>
+                    <option>Excelente</option>
+                </select>
+            </p>
+
+            <p><input type="submit" name="enviar"></p>
+            <p><input type="reset" name="reset"></p>
+        </form>
+    </body>
+</html>
