@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background-color: black;
+        }
+        .tierra{
+            width: 100px;
+            height: 100px;
+            background-image: url(img/tierra.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            animation-name: example;
+            animation-duration: 10s;
+            animation-iteration-count: 5;
+        }
+
+        @keyframes example {
+            0% {
+                left: 50%;
+                top: 0px;
+            }
+
+            20% {
+                left: 20%;
+                top: 50px;
+            }
+
+            40% {
+                left: 10%;
+                top: 100px;
+            }
+
+            60% {
+                left: 20%;
+                top: 150px;
+            }
+
+            70% {
+                left: 50%;
+                top: 200px;
+            }
+
+            80% {
+                left: 70%;
+                top: 150px;
+            }
+
+            90% {
+                left: 80%;
+                top: 100px;
+            }
+
+            95% {
+                left: 70%;
+                top: 50px;
+            }
+
+            100% {
+                left: 50%;
+                top: 0px;
+            }
+
+        }
+        #sol{
+            background-image: url(img/sol.jpg);
+            animation-delay: 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Animation</h1>
+    <p>The animation-direction property specifies whether an animation should be played forwards, backwards or in
+        alternate cycles. The followingexample uses the value "alternate-reverse" to make the animation run backwards
+        first, then forwards:</p>
+    <div id="sol" class="tierra"></div>
+    <div class="tierra"></div>
+
+
+</body>
+
+</html>

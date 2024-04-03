@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-image: url(img/jupiter.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        @keyframes example {
+            0% {
+                transform: rotateZ(0deg);
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                transform: rotateZ(45deg);
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                transform: rotateZ(90deg);
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                transform: rotateZ(135deg);
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                transform: rotateZ(180deg);
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Animation</h1>
+    <p>The animation-delay property specifies a delay for the start of an animation. The following example has a 2
+        seconds delay before startingthe animation:</p>
+    <div></div>
+</body>
+
+</html>
