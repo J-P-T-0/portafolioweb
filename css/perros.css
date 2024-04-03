@@ -1,0 +1,83 @@
+body {
+    padding: 0 50px;
+    background-color: hwb(20 16% 11% / 0.719);
+    font-family: sans-serif;
+    text-align: justify;
+}
+
+h1 {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 1px 5px navajowhite;
+}
+
+h2 {
+    margin: 0;
+    color:hwb(20 16% 50%);;
+    font-family: "Comic Sans", cursive;
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-shadow: 3px 3px navajowhite;
+}
+
+strong {
+    padding: 0 10px;
+    background-color: white;
+    color: darkorange;
+}
+
+i {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+time {
+    color: blue;
+}
+
+img {
+    border: navajowhite 5px solid;
+    padding: 5px;
+}
+
+img.izquierda {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+img.derecha {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+p{
+    font-family: "Arial Narrow";
+    font-size: 20px;
+}
+p.izquierda {
+    float: left;
+    width: 33%;
+}
+
+p.centrado {
+    text-align: center;
+}
+/*Esta es una línea de división*/
+hr {
+    clear: both;
+    width: 66%;
+    height: 10px;
+    border: navajowhite 3px solid;
+    border-radius: 5px;
+    margin: 40px auto;
+    background-color: hwb(10 50% 70%);
+}
+
+address {
+    text-align: right;
+    font-style: normal;
+}

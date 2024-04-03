@@ -1,0 +1,52 @@
+body {
+    background-color: hwb(67 70% 20%);
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+h1 {
+    color: hwb(240 10% 60%);
+    font-weight: 900;
+    letter-spacing: 50px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+h2 {
+    clear: both;
+    background-color: hwb(68 20% 60%);
+    color: white;
+    text-indent: 30px;
+}
+
+p.centrado {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+img.izq {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 300px;
+    margin-left: 10%;
+}
+
+img.der {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 70px;
+}
+
+strong {
+    font-style: oblique;
+}
+
+address {
+    clear: both;
+    font-size: 80%;
+    float: right;
+}

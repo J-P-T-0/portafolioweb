@@ -1,0 +1,34 @@
+body {
+    background-color: hwb(187 20% 0%);
+    font-family: sans-serif;
+}
+
+h1 {
+    margin: 0;
+    color: hwb(187 0% 60%);
+    font-size: 4rem;
+    letter-spacing: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    float: left;
+    width: 16rem;
+    height: 16rem;
+    overflow: auto;
+    border: hwb(187 0% 60%) 5px dashed;
+    margin: 10px;
+    padding: 10px;
+    background-color: hwb(187 0% 20%);
+    font-size: 1.5rem;
+    font-style: oblique;
+}
+
+p::first-letter {
+    float: left;
+    color: hwb(187 0% 60%);
+    font-size: 5rem;
+    font-style: normal;
+    line-height: 3rem;
+}

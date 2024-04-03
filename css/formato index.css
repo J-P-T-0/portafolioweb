@@ -1,0 +1,103 @@
+body{
+    font-family: "Aclonica", sans-serif;
+    list-style-type: none;
+    background-color: white;
+}
+body h2{
+    font-size: 90px;
+    color: rgb(111, 211, 236);
+    text-decoration: underline;
+    padding: 70px;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(30deg) rotateZ(-10deg);
+}
+
+.slide-right{
+    animation:slide-right 1s linear both
+}
+
+@keyframes slide-right{   
+    0% {
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(30deg) rotateZ(-10deg) translateX(0);
+    } 
+    100% {
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(30deg) rotateZ(-10deg) translateX(100);
+    }
+}
+
+header{
+    padding: 30px;
+    background-color:aliceblue;
+    border-bottom: 15px black solid;
+    border-radius: 10px 10px 10px 10px;
+}
+header div{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+header h1{
+    color: rgb(13, 128, 228);
+    font-size: 160px;
+    margin-top: auto;
+    font-weight: bolder;
+    text-shadow: 7px 4px darkblue;
+    -webkit-text-stroke: 0.1mm black;
+    text-align: left;
+}
+nav{
+    background: rgb(152,152,152);
+    background: linear-gradient(90deg, rgba(152,152,152,1) 0%, rgba(182,182,182,1) 43%, rgba(255,255,255,1) 100%);
+    padding: 30px;
+    border-left: 50px rgb(13, 128, 228) solid;
+    border-top: 20px rgb(13, 128, 228) solid;
+    border-radius: 20px 20px 20px 20px;
+    margin-top: 10px;
+}
+nav div{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+nav p{
+    transform-style: preserve-3d;
+    transform: rotateX(30deg) rotateY(-30deg) rotateZ(25deg);
+
+    display: inline-block;
+    margin-right: 10%;
+}
+nav a{
+    text-decoration: none;
+    color: rgb(13, 128, 228);
+    font-family: "Aclonica", sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+}
+nav a:hover{
+    color: black;
+    background-image: url("img/triangulo.png");
+    background-size: cover;
+    background-color: rgba(255, 0, 0, 0.384);
+    padding: 15px;
+    border-radius: 0 20px 0 20px;
+}
+
+iframe{
+    width:1000px;
+    height:500px;
+}
+section p{
+    display: inline;
+    vertical-align: top;
+}
+section div{
+    display: inline-block;
+    vertical-align: top;
+}
+#circle{
+    background: lightblue;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    justify-content: flex-end;
+}

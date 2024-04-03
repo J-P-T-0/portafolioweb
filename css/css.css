@@ -1,0 +1,32 @@
+body{
+    background-color: darkgray;
+}
+h1{
+    color: rgb(177, 46, 13);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+    text-align: center;
+}
+h2{
+    color:rgb(6, 114, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 30px;
+}
+p{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12;
+    column-count:2;
+    column-gap:40px;
+    text-align:end;
+    display: flex;
+    justify-content: center;
+}
+img{
+    width: 400px;
+    height: 300px;
+}
+table{
+    row-gap: 10px;
+}
