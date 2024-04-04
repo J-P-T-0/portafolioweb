@@ -7,6 +7,50 @@
         <link rel="StyleSheet" href="css/formato index.css" type="text/css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+            body{
+                background-image: url("img/fondo_azul.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            header{
+                padding: 30px;
+                background: linear-gradient(to right, transparent, cornflowerblue),
+                url("img/rail.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-bottom: 15px black solid;
+                border-radius: 10px 10px 10px 10px;
+            }
+
+            nav a:hover{
+                color: black;
+                background-image: url("img/triangulo.png");
+                background-size: cover;
+                background-color: rgba(255, 0, 0, 0.384);
+                padding: 15px;
+                border-radius: 0 20px 0 20px;
+                transition-duration: 0.5s;
+                transition-delay: 0.1s;
+            }
+
+            section a{
+                text-decoration: none;
+                font-size: 20px;
+                padding: 20% 15% 0 20%;
+                float:left;
+                margin-top: 10px;
+            }
+
+            section a:hover{
+                color: black;
+                font-size: 30px;
+                transition-duration: 1s;
+                background-image: url("img/triangulo.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
         </style>
     </head>
     <body>
@@ -25,81 +69,97 @@
             <h2 id="parcial1">Parcial 1</h2>
             <h3>Tareas</h3>
             <div>
-                <iframe src="demo_iframe.htm" title="contenido" name="iframe_1t"></iframe>
+                <iframe src="tareas/la%20web.png" title="contenido" name="iframe_1t"></iframe>
             </div>
             <div id="circle">
-                <p><a href="tareas/la%20web.png" target="iframe_1t">La Web</a></p><br>
-                <p><a href="tareas/Mapa%20navegación%20YT.png" target="iframe_1t">Mapa de navegación de YT</a></p><br>
-                <p><a href="https://sites.google.com/view/alanwalkerz/inicio">Prototipo Sites</a></p><br>
-                <p><a href="https://alanwalkerinfo.my.canva.site">Prototipo Canva</a></p><br>
-                <p><a href="https://sites.google.com/view/internet-y-www/inicio">Prototipo La Web</a></p><br>
+                <div>
+                    <p><a class="c1" href="tareas/la%20web.png" target="iframe_1t">La Web</a></p><br>
+                    <p><a class="c2" href="tareas/Mapa%20navegación%20YT.png" target="iframe_1t">Mapa de navegación de YT</a></p><br>
+                    <p><a  class="c3" href="https://sites.google.com/view/alanwalkerz/inicio">Prototipo Sites</a></p><br>
+                    <p><a class="c4" href="https://alanwalkerinfo.my.canva.site">Prototipo Canva</a></p><br>
+                    <p><a class="c5" href="https://sites.google.com/view/internet-y-www/inicio">Prototipo La Web</a></p><br>
+                </div>
             </div>
             
                 <h3>Prácticas</h3>
             <div>
-                <iframe src="demo_iframe.htm" title="contenido" name="iframe_1p"></iframe>
+                <iframe src="formulario.html" title="contenido" name="iframe_1p"></iframe>
             </div>
-            <div>
-                <p><a href="formulario.html" target="iframe_1p">Formulario</a></p><br>
-                <p><a href="frames.html" target="iframe_1p">IFrames</a></p><br>
-                <p><a href="reproductordevideo.html" target="iframe_1p">Reproductor</a></p><br>
-                <p><a href="sistema%20solar.html" target="iframe_1p">Sistema Solar</a></p><br>
-                <p><a href="practica1.html" target="iframe_1p">Practica 1</a></p><br>
-                <p><a href="practica2.html" target="iframe_1p">Practica 2</a></p><br>
-                <p><a href="practica3.html" target="iframe_1p">Practica 3</a></p><br>
-                <p><a href="practica4.html" target="iframe_1p">Practica 4</a></p><br>
-                <p><a href="practica5.html" target="iframe_1p">Practica 5</a></p><br>
-                <p><a href="practica6.html" target="iframe_1p">Practica 6</a></p><br>
-                <p><a href="practica7.html" target="iframe_1p">Practica 7</a></p><br>
+            <div id="circle">
+                <div>
+                    <p><a  class="c1" href="formulario.html" target="iframe_1p">Formulario</a></p><br>
+                    <p><a  class="c2" href="frames.html" target="iframe_1p">IFrames</a></p><br>
+                    <p><a  class="c3" href="reproductordevideo.html" target="iframe_1p">Reproductor</a></p><br>
+                    <p><a class="c4" href="sistema%20solar.html" target="iframe_1p">Sistema Solar</a></p><br>
+                    <p><a class="c5"  href="practica1.html" target="iframe_1p">Practica 1</a></p><br>
+                    <p><a class="c5"  href="practica2.html" target="iframe_1p">Practica 2</a></p><br>
+                    <p><a class="c5"  href="practica3.html" target="iframe_1p">Practica 3</a></p><br>
+                    <p><a  class="c1" href="practica4.html" target="iframe_1p">Practica 4</a></p><br>
+                    <p><a  class="c1" href="practica5.html" target="iframe_1p">Practica 5</a></p><br>
+                    <p><a  class="c2" href="practica6.html" target="iframe_1p">Practica 6</a></p><br>
+                    <p><a  class="c3" href="practica7.html" target="iframe_1p">Practica 7</a></p><br>
+                </div>
+
             </div>
             
                 <h3>Retos</h3>
             <div>
-                <iframe src="demo_iframe.htm" title="contenido" name="iframe_1r"></iframe>
+                <iframe src="reto1.html" title="contenido" name="iframe_1r"></iframe>
             </div>
-            <div>
-                <p><a href="reto1.html" target="iframe_1r">Reto 1</a></p><br>
-                <p><a href="razas.html" target="iframe_1r">Examen práctico/ Razas</a></p><br>
+            <div id="circle">
+                <div>
+                    <p><a  class="c1"href="reto1.html" target="iframe_1r">Reto 1</a></p><br>
+                    <p><a  class="c2" href="razas.html" target="iframe_1r">Examen práctico/ Razas</a></p><br>
+                </div>
             </div>
         </section>
         <section>
             <h2 id="parcial2">Parcial 2</h2>
             <h3>Tareas</h3>
             <div>
-                <iframe src="demo_iframe.htm" title="contenido" name="iframe_2t"></iframe>
+                <iframe src="historiaslp.html" title="contenido" name="iframe_2t"></iframe>
             </div>
-            <div>
-                <p><a href="historiaslp.html" target="iframe_2t">Historia de San Luis Potosí</a></p><br>
-                <p><a href="7barriosslp.html" target="iframe_2t">Los 7 barrios de San Luis Potosí</a></p><br>
-                <p><a href="tareas/modeloscss.pdf" target="iframe_2t">Modelos CSS</a></p><br>
+            <div id="circle">
+                <div>
+                    <p><a  class="c1" href="historiaslp.html" target="iframe_2t">Historia de San Luis Potosí</a></p><br>
+                    <p><a  class="c2" href="7barriosslp.html" target="iframe_2t">Los 7 barrios de San Luis Potosí</a></p><br>
+                    <p><a  class="c3" href="tareas/modeloscss.pdf" target="iframe_2t">Modelos CSS</a></p><br>
+                </div>
             </div>
             
             <h3>Prácticas</h3>
             <div>
-                <iframe src="demo_iframe.htm" title="contenido" name="iframe_2p"></iframe>
+                <iframe src="ejerciciosclases2.html" title="contenido" name="iframe_2p"></iframe>
             </div>
-            <div>
-                <p><a href="ejerciciosclases2.html" target="iframe_2p">Ejercicios de clase 2</a></p><br>
-                <p><a href="cancion.html" target="iframe_2p">PRÁCTICA INICIAL CSS</a></p><br>
-                <p><a href="ejemplo.html" target="iframe_2p">Páginas web HTML y hojas de estilo CSS</a></p><br>
-                <p><a href="londres.html" target="iframe_2p">Museos de Londres</a></p><br>
-                <p><a href="citas.html" target="iframe_2p">Citas</a></p><br>
-                <p><a href="practica1p2.html" target="iframe_2p">Práctica 1</a></p><br>
-                <p><a href="practica2p2.html" target="iframe_2p">Práctica 2</a></p><br>
-                <p><a href="practica3p2.html" target="iframe_2p">Práctica 3</a></p><br>
-                <p><a href="practica8.html" target="iframe_2p">Práctica 12</a></p><br>
-                <p><a href="practica13.html" target="iframe_2p">Práctica 13</a></p><br>
+            <div id="circle">
+                <div>
+                    <p><a  class="c1" href="ejerciciosclases2.html" target="iframe_2p">Ejercicios de clase 2</a></p><br>
+                    <p><a  class="c2" href="cancion.html" target="iframe_2p">PRÁCTICA INICIAL CSS</a></p><br>
+                    <p><a  class="c3" href="ejemplo.html" target="iframe_2p">Páginas web HTML y hojas de estilo CSS</a></p><br>
+                    <p><a class="c4" href="londres.html" target="iframe_2p">Museos de Londres</a></p><br>
+                    <p><a class="c5"  href="citas.html" target="iframe_2p">Citas</a></p><br>
+                    <p><a class="c5"  href="practica1p2.html" target="iframe_2p">Práctica 1</a></p><br>
+                    <p><a class="c5"  href="practica2p2.html" target="iframe_2p">Práctica 2</a></p><br>
+                    <p><a  class="c1" href="practica3p2.html" target="iframe_2p">Práctica 3</a></p><br>
+                    <p><a  class="c1" href="practica8.html" target="iframe_2p">Práctica 12</a></p><br>
+                    <p><a  class="c2" href="practica13.html" target="iframe_2p">Práctica 13</a></p><br>
+                    <p><a  class="c3" href="animacion.html" target="iframe_2p">Menú interactivo</a></p><br>
+                    <p><a class="c4" href="animacion1.html" target="iframe_2p">Animación 1</a></p><br>
+                    <p><a class="c5"  href="animacion2.html" target="iframe_2p">Animación 2</a></p><br>
+                </div>
             </div>
             
             <h3>Retos</h3>
             <div>
-                <iframe src="demo_iframe.htm" title="contenido" name="iframe_2r"></iframe>
+                <iframe src="tablero.html" title="contenido" name="iframe_2r"></iframe>
             </div>
-            <div>
-                <p><a href="tablero.html" target="iframe_2r">Tablero</a></p><br>
-                <p><a href="reto3horario.html" target="iframe_2r">Horario</a></p><br>
-                <p><a href="reto2.html" target="iframe_2r">Comic sans</a></p><br>
-                <p><a href="reto2css.html" target="iframe_2r">Reto 2</a></p><br>
+            <div id="circle">
+                <div>
+                    <p><a  class="c1" href="tablero.html" target="iframe_2r">Tablero</a></p><br>
+                    <p><a  class="c2" href="reto3horario.html" target="iframe_2r">Horario</a></p><br>
+                    <p><a  class="c3" href="reto2.html" target="iframe_2r">Comic sans</a></p><br>
+                    <p><a class="c4" href="reto2css.html" target="iframe_2r">Reto 2</a></p><br>
+                </div>
             </div>
         </section>
     </body>
