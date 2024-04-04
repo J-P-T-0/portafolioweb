@@ -1,7 +1,8 @@
 body{
     font-family: "Aclonica", sans-serif;
     list-style-type: none;
-    background-color: white;
+    background-color: transparent;
+    position: relative;
 }
 body h2{
     font-size: 90px;
@@ -13,7 +14,7 @@ body h2{
 }
 
 .slide-right{
-    animation:slide-right 1s linear both
+    animation:slide-right 1.5s linear both
 }
 
 @keyframes slide-right{   
@@ -27,12 +28,6 @@ body h2{
     }
 }
 
-header{
-    padding: 30px;
-    background-color:aliceblue;
-    border-bottom: 15px black solid;
-    border-radius: 10px 10px 10px 10px;
-}
 header div{
     margin-top: 100px;
     margin-bottom: 100px;
@@ -73,31 +68,59 @@ nav a{
     font-size: 50px;
     font-weight: bolder;
 }
-nav a:hover{
-    color: black;
-    background-image: url("img/triangulo.png");
-    background-size: cover;
-    background-color: rgba(255, 0, 0, 0.384);
-    padding: 15px;
-    border-radius: 0 20px 0 20px;
-}
+
 
 iframe{
     width:1000px;
     height:500px;
+    border: black 5px dashed;
 }
-section p{
-    display: inline;
-    vertical-align: top;
-}
+
 section div{
     display: inline-block;
     vertical-align: top;
+    margin-left: 7%;
 }
+
+#circle div{
+    max-height: 450px;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+
+}
+
+section h3{
+    margin-left: 10%;
+    padding: 15px;
+    border: 2px black solid;
+    max-width: 250px;
+    font-size: 40px;
+}
+
 #circle{
-    background: lightblue;
+    background: mediumblue;
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    justify-content: flex-end;
+    width: 400px;
+    height: 400px;
+    position: relative;
 }
+
+/*colores*/
+    .c1{
+        color:#0dc8ff;
+    }
+    .c2{
+        color:#6ae7fd;
+    }
+    .c3{
+        color:#69fdfd;
+    }
+    .c4{
+        color:#0bcaff;
+    }
+    .c5{
+        color:#377cf7;
+    }
+
