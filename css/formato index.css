@@ -71,24 +71,33 @@ nav a{
 
 
 iframe{
-    width:1000px;
+    width: 1000px;
     height:500px;
-    border: black 5px dashed;
+    border: darkgray 5px dashed;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 section div{
     display: inline-block;
     vertical-align: top;
     margin-left: 7%;
+    margin-bottom: 5%;
+}
+
+@MEDIA (MAX-WIDTH: 1600PX){
+    iframe{
+        width: 90%;
+    }
+    section div{
+        margin-left: 30%;
+    }
 }
 
 #circle div{
     max-height: 450px;
     overflow: auto;
-    align-items: flex-start;
-    justify-content: center;
     position: relative;
-
 }
 
 section h3{
@@ -100,7 +109,7 @@ section h3{
 }
 
 #circle{
-    background: mediumblue;
+    background: rgba(0, 0, 205, 0.70);
     border-radius: 50%;
     width: 400px;
     height: 400px;
