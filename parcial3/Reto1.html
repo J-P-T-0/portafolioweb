@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Bienvenida del usuario</title>
+  <style>
+    p{
+        color:blueviolet;
+        background-color: aliceblue;
+        text-align: center;
+        padding: 5px;
+        margin:auto;
+        font-size: 1.5rem;
+    }
+
+  </style>
+
+  <script type = "text/javascript">
+
+  function tabla() {
+
+    var filas1= document.forms[0].filas.value;
+    var colum1= document.forms[0].colum.value;
+
+    document.write("<table style='background-color: aliceblue; border: blueviolet solid 2px; margin:auto'>");
+
+    for(i=0;i<filas1;i++)
+    {
+        document.write("<tr>");
+        for(j=0; j<colum1; j++){
+            num=Math.floor(Math.random()*100)+1;
+            document.write("<td style='border: blueviolet solid 2px; padding:10px'>"+num+"</td>");
+        }
+        document.write("</tr>");
+    }
+
+    document.write("</table>");
+
+    return true;
+
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return tabla();">
+
+<p>Filas: <input id="filas" name="filas" type="number" min="1" /></p>
+<p>Columnas: <input id="colum" name="colum" type="number" min="1"/></p>
+
+<p><input type="submit" /></p>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Bienvenida del usuario</title>
+
+  <script type = "text/javascript">
+
+  function usa() {
+    var grados= parseInt(document.forms[0].grad.value);
+    var conver= document.forms[0].conv.value;
+
+    if(conver==0){
+        var res=(grados*(9/5)+32);
+        document.write("Resultado: "+res);
+    }else{
+        var res=(grados+273);
+        document.write("Resultado: "+res);
+    }
+
+    return true;
+
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return usa();">
+
+<p>Grados: <input id="grad" name="grad" type="number"/></p>
+<p>Convertir a: 
+    <select name="conv">
+        <option></option>
+        <option value="0">Farenheit</option>
+        <option value="1">Kelvin</option>
+    </select>
+</p>
+
+<p><input type="submit" /></p>
+
+</form>
+
+</body>
+</html>

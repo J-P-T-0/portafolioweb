@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            var arreglo =[0,0,0,0,0,0];
+            var n=arreglo.length;
+            function generaarreglo(){
+            for(i=0;i<n;i++)
+                arreglo[i]=Math.floor(Math.random()*100)+1;
+            }
+    
+            function imprimearreglo() {
+                document.getElementById("demo").innerHTML = "Arreglo Resultante:"+arreglo;
+            }
+            function ordenaarreglo(){
+                arreglo=arreglo.sort(function(a,b){return a - b});
+                document.getElementById("demo").innerHTML = "Arreglo Resultante:"+arreglo;
+            }
+            function reversaarreglo(){
+                arreglo=arreglo.reverse();
+                document.getElementById("demo").innerHTML = "Arreglo Resultante:"+arreglo;
+            }
+            function tabla(){
+                var celda="";
+                celda=celda+"<table border=1><tr>";
+                for(i=0;i<n;i++){
+                    celda= celda+"<td>"+arreglo[i]+"</td>";
+                }
+                celda=celda+"</tr></table>";
+                document.getElementById("demo").innerHTML = celda;
+            }
+            function agregar(){
+                var elemento=Math.floor(Math.random()*100)+1;
+                arreglo+arreglo.push(elemento);
+            }
+            function eliminar(){
+                arreglo-arreglo.pop();
+            }
+        </script>
+    </head>
+
+<body>
+    <h1>Arreglos</h1>
+    <h2>ordenación</h2>
+    <p>Click en la opcion</p>
+    <button onclick="generaarreglo()">llenado del arreglo</button>
+    <button onclick="imprimearreglo()">imprime el arreglo</button>
+    <button onclick="ordenaarreglo()">Ordena el arreglo</button>
+    <button onclick="reversaarreglo()">Revierte el arreglo</button>
+    <button onclick="tabla()">Imprime la tabla</button>
+    <button onclick="agregar()">Agregar elemento</button>
+    <button onclick="eliminar()">Eliminar elemento</button>
+    <div id="demo"></div>
+</body>
+</html>
