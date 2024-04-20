@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Bienvenida del usuario</title>
+  <style>
+    p{
+        color:blueviolet;
+        background-color: aliceblue;
+        text-align: center;
+        padding: 5px;
+        margin:auto;
+        font-size: 1.5rem;
+    }
+
+  </style>
+
+  <script type = "text/javascript">
+
+  function tabla() {
+
+    var filas1= parseInt(document.forms[0].filas.value);
+    var colum1= parseInt(document.forms[0].colum.value);
+    var texto="<img src='../img/triangulo.png'>";
+    document.write("<table style='background-color: #6ae7fd; border: blueviolet solid 1px'>");
+
+    for(i=1;i<=filas1;i++)
+    {
+        document.write("<tr>");
+        for(j=0; j<colum1; j++){
+            document.write("<td style='border: blueviolet solid 1px; padding:5px'>"+texto+"</td>");
+        }
+        document.write("</tr>");
+    }
+
+    document.write("</table>");
+
+    return true;
+
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return tabla();">
+
+<p>Filas: <input id="filas" name="filas" type="number" /></p>
+<p>Columnas: <input id="colum" name="colum" type="number" /></p>
+
+<p><input type="submit" /></p>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Bienvenida del usuario</title>
+
+  <script type = "text/javascript">
+
+  function usa() {
+    usuario="admin";
+    contraseña="admin";
+    var usu1= document.forms[0].usu.value;
+    var contra1= document.forms[0].contra.value;
+
+    if(usuario==usu1 && contraseña==contra1){
+        document.write("Acceso permitido<br>");
+        document.write("<a href='index.html'>Portafolio</a>");
+    }else{
+        document.write("Acceso denegado");
+    }
+
+    return true;
+
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return usa();">
+
+<p>Usuario: <input id="usu" name="filas" type="text" /></p>
+<p>Contraseña: <input id="contra" name="colum" type="password" /></p>
+
+<p><input type="submit" /></p>
+
+</form>
+
+</body>
+</html>
