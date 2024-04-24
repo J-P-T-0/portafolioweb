@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Gráficas</title>
+    <meta charset="UTF8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+
+<body>
+    <div id="myPlot1" style="width:100%;max-width:700px"></div>
+    <div id="myPlot2" style="width:100%;max-width:700px"></div>
+    <div id="myPlot3" style="width:100%;max-width:700px"></div>
+    <script>
+        const numArray=[0,0,0,0,0,0];
+        let num=0;
+        for(i=0;i<6;i++){
+            numArray[i]=Math.floor(Math.random()*10)+1;
+        }
+        const xArray = ["Progra 1", "Física 1", "Núcleo 2", "Mate 2", "Progra web", "Prob. y estadística"];
+        const yArray1 = [10.0, 9.5, 10.0, 10.0, 10.0, 10.0];
+        const yArray2 = [10.0, 9.0, 10.0, 10.0, 10.0, 10.0];
+        function graf(array, numi,r,g,b){
+            const data = [{
+            x: xArray,
+            y: array,
+            type: "bar",
+            orientation: "v",
+            marker: { color: "rgba("+r+","+g+","+b+",0.6)" }
+        }];
+        const layout = { title: "Calificaciones del parcial "+numi};
+        Plotly.newPlot("myPlot"+numi, data, layout);
+        }
+        graf(yArray1,1,255,0,0);
+        graf(yArray2,2,0,255,0);
+        graf(numArray,3,0,0,255);
+    </script>
+</body>
+
+</html>
