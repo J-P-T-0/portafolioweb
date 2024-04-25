@@ -6,14 +6,31 @@
         <style>
             canvas{
                 border: 1px solid black;
+                width: 100%;
+                height: 100%;
             }
         </style>
-        <script>
-            
-        </script>
     </head>
     <body>
         <h1>Esto es un mono :p</h1>
-        <canvas id="canv"></canvas>
+        <canvas></canvas>
+        <script>
+            function linea(x1,y1,x2,y2){
+                c.beginPath();
+                c.lineTo(x1, y1);
+                c.lineTo(x2, y2);
+                c.stroke();
+            }
+            var canvas=document.querySelector('canvas');
+            var c=canvas.getContext('2d');
+            c.beginPath();
+            c.arc(145, 20, 15, 0, Math.PI * 2, true);
+            c.stroke();
+            linea(175,20,145,45);
+            linea(115,20,145,45);
+            linea(145,35,145,70);
+            linea(125,100,145,70);
+            linea(160,100,145,70);
+        </script>
     </body>
 </html>
