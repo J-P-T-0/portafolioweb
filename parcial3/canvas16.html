@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <titulo>Gráfica de barras</titulo>
+        <meta charset="UTF8">
+    </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+    <script>
+        const xValues = ["Progra 1", "Física 1", "Núcleo 2", "Mate 2", "Progra web", "Prob. y estadística"];
+        const yValues = [0, 0, 0, 0, 0, 0,0];
+        const barColors = ["red", "green", "blue", "orange", "brown","purple"];
+        for(i=0;i<6;i++){
+            yValues[i]=Math.floor(Math.random()*10)+1;
+        }
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "¿Calificaciones?"
+                }
+            }
+        });
+    </script>
+</body>
+</html>
