@@ -11,14 +11,16 @@
         <p>Fin: </p><input type="number" id="fin" name="fin">
         <input type="submit">
     </form>
+    <p id="alerta"></p>
     <div id="myPlot" style="width:100%;max-width:700px"></div>
     <script type = "text/javascript">
         function graf(){
             var ini=parseInt(document.forms[0].inicio.value);
             var fini=parseInt(document.forms[0].fin.value);
             if(ini>fini||ini==fini){
-                document.getElementById("myPlot").innerHTML="No se puede graficar";
+                document.getElementById("alerta").innerHTML="No se puede graficar";
             }else{
+                document.getElementById("alerta").innerHTML="";
                 let exp = "Math.sin(x)";
                 //let exp="Math.cos(x)";
                 //let exp="Math.pow(x/(x-2)+x/(x+2),2)"

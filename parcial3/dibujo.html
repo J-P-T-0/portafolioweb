@@ -24,8 +24,11 @@
             var canvas=document.querySelector('canvas');
             var c=canvas.getContext('2d');
             c.beginPath();
+            c.fillStyle = "#FFCC80";
+            c.strokeStyle = "black";
             c.arc(145, 20, 15, 0, Math.PI * 2, true);
             c.stroke();
+            c.fill();
             linea(175,20,145,45);
             linea(115,20,145,45);
             linea(145,35,145,70);

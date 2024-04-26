@@ -18,6 +18,7 @@
         </select><br>
         <input type="submit">
     </form>
+    <p id="alerta"></p>
     <div id="myPlot" style="width:100%;max-width:700px"></div>
     <script type = "text/javascript">
         function graf(){
@@ -27,31 +28,35 @@
             //let exp="Math.cos(x)";
             //let exp="Math.pow(x/(x-2)+x/(x+2),2)"
             // Generate values
-            switch(opc){
-                case 1:
-                var exp = "Math.sin(x)";
-                break;
-                case 2:
-                var exp = "Math.cos(x)";
-                break;
-                case 3:
-                var exp = "Math.tan(x)";
-                break;
-                case 4:
-                var exp = "Math.tanh(x)";
-                break;
+            if(ini>fini||ini==fini){
+                document.getElementById("alerta").innerHTML="No se puede graficar";
+            }else{
+                document.getElementById("alerta").innerHTML="";
+                switch(opc){
+                    case 1:
+                        var exp = "Math.sin(x)";
+                        break;
+                    case 2:
+                        var exp = "Math.cos(x)";
+                        break;
+                    case 3:
+                        var exp = "Math.tan(x)";
+                        break;
+                    case 4:
+                        var exp = "Math.tanh(x)";
+                        break;
+                }
+                const xValues = [];
+                const yValues = [];
+                for (let x = ini; x <=fini; x += 0.1) {
+                    xValues.push(x);
+                    yValues.push(eval(exp));
+                }
+                // Display using Plotly
+                const data = [{ x: xValues, y: yValues, mode: "lines" }];
+                const layout = { title: "y = " + exp };
+                Plotly.newPlot("myPlot", data, layout);
             }
-            const xValues = [];
-            const yValues = [];
-            for (let x = ini; x <=fini; x += 0.1) {
-                xValues.push(x);
-                yValues.push(eval(exp));
-            }
-            // Display using Plotly
-            const data = [{ x: xValues, y: yValues, mode: "lines" }];
-            const layout = { title: "y = " + exp };
-            Plotly.newPlot("myPlot", data, layout);
-
             return false;
         }
         
