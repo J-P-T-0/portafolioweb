@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Dibujo</title>
+        <meta charset="UTF8">
+        <style>
+            canvas{
+                border: 1px solid black;
+                float: left;
+                margin-right: 5%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ahorcado</h1>
+        <canvas width="500" height="500"></canvas>
+
+            <p>Escriba una letra: </p>
+            <form id="forms" onsubmit="dibujar();">
+                <input type="text" maxlength="10" id="letra"><br><br>
+                <input type="submit">
+            </form>
+            
+            <button onclick="reinicio();">Reiniciar</button>
+
+        
+        
+        <script>
+            var palabra="palabra";
+            //var entrada=document.
+            var canvas=document.querySelector('canvas');
+            var c=canvas.getContext('2d');
+            /*if(palabra==entrada){
+
+            }*/
+            function dibujar(){
+                function linea(x1,y1,x2,y2){
+                c.beginPath();
+                c.lineWidth=7;
+                c.lineTo(x1, y1);
+                c.lineTo(x2, y2);
+                c.stroke();
+                }
+            c.beginPath();
+            c.fillStyle = "black";
+            c.lineWidth=7;
+            c.arc(250.5, 150.5, 40, 0, Math.PI * 2, true);
+            c.fill();
+            c.stroke();
+            
+            linea(325,200,250.5,245);
+            linea(250.5,245,175,200);
+            linea(250.5,150,250.5,325);
+            linea(200,400,250.5,325);
+            linea(300,400,250.5,325);
+            }
+            function reinicio(){
+                c.beginPath();
+                c.fillStyle = "white";
+                c.fillRect(0,0,500,500);
+                c.stroke();
+            }
+        </script>
+    </body>
+</html>
