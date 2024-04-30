@@ -6,34 +6,44 @@
         <style>
             canvas{
                 border: 1px solid black;
-                width: 100%;
-                height: 100%;
             }
         </style>
     </head>
     <body>
-        <h1>Esto es un mono :p</h1>
-        <canvas></canvas>
+        <h1>Ahorcado Parte 1</h1>
+        <button onclick="dibujar();">Dibujar</button><br>
+        <button onclick="limpiar();">Limpiar</button><br>
+        <canvas width="500" height="500"></canvas>
         <script>
-            function linea(x1,y1,x2,y2){
+            var canvas=document.querySelector('canvas');
+            var c=canvas.getContext('2d');
+            function dibujar(){
+                function linea(x1,y1,x2,y2){
                 c.beginPath();
+                c.lineWidth=6;
                 c.lineTo(x1, y1);
                 c.lineTo(x2, y2);
                 c.stroke();
-            }
-            var canvas=document.querySelector('canvas');
-            var c=canvas.getContext('2d');
+                }
             c.beginPath();
-            c.fillStyle = "#FFCC80";
-            c.strokeStyle = "black";
-            c.arc(145, 20, 15, 0, Math.PI * 2, true);
-            c.stroke();
+            c.fillStyle = "black";
+            c.lineWidth=7;
+            c.arc(250.5, 150.5, 40, 0, Math.PI * 2, true);
             c.fill();
-            linea(175,20,145,45);
-            linea(115,20,145,45);
-            linea(145,35,145,70);
-            linea(125,100,145,70);
-            linea(160,100,145,70);
+            c.stroke();
+            
+            linea(350.5,200,250.5,245);
+            linea(250.5,245,150,200);
+            linea(250.5,150,250.5,350);
+            linea(200,450,250.5,350);
+            linea(300,450,250.5,350);
+            }
+            function limpiar(){
+                c.beginPath();
+                c.fillStyle = "white";
+                c.fillRect(0,0,500,500);
+                c.stroke();
+            }
         </script>
     </body>
 </html>
