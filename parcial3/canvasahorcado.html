@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        body{
+            font-family: Verdana,sans-serif;
+        }
+        /*.letras{
+            border: black 4px solid;
+            border-radius: 15px;
+            width: 35px;
+            height: 70px;
+            margin: 0 5px;
+            padding: 3px 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5rem;
+        }*/
+        #myCanvas{
+            border: black solid 1px;
+            margin: 15px 50px 15px 0;
+        }
+        #condicion{
+            font-size: 2.5rem;
+            margin: 10px 1px;
+        }
+    </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body onload="horca();juego();">
+
+<h1>AHORCADO</h1>
+
+<div style="display: flex;width: 100vw">
+    <canvas id="myCanvas" width="500" height="500" style=""></canvas>
+    <form action="javascript:void(0)" id="oal">
+        <label for="guess"> <h3>Letra</h3> <input type="text" id="guess" name="guess" style="height: 2rem;" maxlength="1">
+        <p>Presione enter para insertar la letra</p></label>
+        <br><br>
+    </form>
+    <button id="resetear" style="display: none;width: 100px;height: fit-content" onclick="resetear()">Reestablecer</button>
+</div>
+<div id="palabra" style="width: 100vw; display: flex"></div>
+<div id="condicion"></div>
+<script>
+    let c = document.getElementById("myCanvas").getContext("2d");
+    /*const palabras = ["zodiaco","caracol","crimen","cuchara","elegido",
+        "arresto","lima","avion","sorteo","tomate","falso","verdadero",
+        "modelo","finlandia","dado","zeta","centrar","soga","impuestos",
+        "nota","asalto","pretzel","gimnasio","collar","infantil","delgado",
+        "demonio","angel","tractor","guerra","alarma","gritar","manubrio",
+        "mascara","moda","regalo","bicicleta","hielo","salvaje","gobierno",
+        "azotea","idioma","baile","oficina","documento","secreto","hermano",
+        "capturar","sello","liberar","roca","tumba","marte","abrelatas",
+        "murcielago"];*/
+    const palabra="mano";
+    //let random=Math.floor(Math.random()*palabras.length);
+    let errores=0;
+    let aciertos=0;
+
+    /*function juego(){
+
+        for (let i = 0; i < palabras[random].length; i++) {
+            let div = document.createElement('div');
+            div.setAttribute('class', 'letras');
+            document.getElementById("palabra").appendChild(div);
+        }
+
+    }*/
+    function buscar(){
+        let encontrar=false;
+        let letra = document.getElementById("oal").guess.value.toLowerCase();
+
+       document.getElementById("condicion").innerHTML=letra;
+
+        if(errores<7 && aciertos!==palabra.length){
+            for(let i=0; i<palabra.length; i++){
+                if(palabra[i]===letra){
+                    encontrar=true;
+                   //document.getElementsByClassName("letras")[i].innerHTML=palabras[random][i];
+                    aciertos++;
+                }
+            }
+            if(!encontrar) {
+                errores++;
+                switch (errores){
+                    case 1:
+                        c.beginPath();
+                        c.fillStyle = "black";
+                        c.lineWidth=7;
+                        c.arc(250.5, 150.5, 40, 0, Math.PI * 2, true);
+                        c.fill();
+                        c.stroke();
+                        break;
+                    case 2:
+                        linea(350.5,200,250.5,245);
+                        break;
+                    case 3:
+                        linea(250.5,245,150,200);
+                        break;
+                    case 4:
+                        linea(250.5,150,250.5,350);
+                        break;
+                    case 5:
+                        linea(200,450,250.5,350);
+                        break;
+                    case 6:
+                        linea(300,450,250.5,350);
+                        break;
+                    /*case 7:
+                        cara();
+                        break;*/
+                }
+            }
+        }if(errores>=7){
+            document.getElementById("condicion").innerHTML="¡Perdiste! La palabra era: "+palabra;
+            document.getElementById("condicion").style.color="red";
+            document.getElementById("resetear").style.display="block";
+        }
+        if(aciertos===palabra.length){
+            document.getElementById("condicion").innerHTML="¡Ganaste!";
+            document.getElementById("condicion").style.color="green";
+            document.getElementById("resetear").style.display="block";
+        }
+    }
+    function resetear(){
+        //const divs = document.getElementsByClassName("letras");
+        document.getElementById("condicion").innerHTML="";
+        document.getElementById("condicion").style.color="black";
+        c.beginPath();
+        c.fillStyle = "white";
+        c.fillRect(0, 0, 500, 500);
+        c.stroke();
+        //horca();
+        document.getElementById("resetear").style.display="none";
+        errores=0; aciertos=0;
+
+        //funcion para destruir los divs
+        /*while (divs.length>0) {
+            divs[0].parentNode.removeChild(divs[0]);
+        }
+        random=Math.floor(Math.random()*palabras.length);
+        juego();*/
+    }
+    /*function horca(){
+        ctx.beginPath();
+        ctx.lineWidth = 15;
+        ctx.moveTo(250, 100);
+        ctx.lineTo(250, 10);
+        ctx.lineTo(10, 10);
+        ctx.lineTo(10, 480);
+        ctx.lineTo(250, 480);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.lineWidth = 15;
+        ctx.moveTo(10, 360);
+        ctx.lineTo(100, 480);
+        ctx.stroke();
+    }*/
+    function linea(x1,y1,x2,y2){
+                c.beginPath();
+                c.lineWidth=6;
+                c.lineTo(x1, y1);
+                c.lineTo(x2, y2);
+                c.stroke();
+    }        
+            
+/*
+    function cabeza(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.arc(250, 150, 50, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    function cara(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.arc(250, 190, 20, Math.PI+0.5, -0.5, false);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.arc(230, 140, 5, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.arc(270, 140, 5, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    function cuerpo(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.moveTo(250, 200);
+        ctx.lineTo(250, 340);
+        ctx.stroke();
+    }
+    function pieDerecho(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.moveTo(250, 340)
+        ctx.lineTo(300, 420);
+        ctx.stroke();
+    }
+    function pieIzquierdo(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.moveTo(250, 340);
+        ctx.lineTo(200, 420);
+        ctx.stroke();
+    }
+    function manoDerecha(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.moveTo(250, 200);
+        ctx.lineTo(330, 240);
+        ctx.stroke();
+    }
+    function manoIzquierda(){
+        ctx.beginPath();
+        ctx.lineWidth = 4;
+        ctx.moveTo(250, 200);
+        ctx.lineTo(170, 240);
+        ctx.stroke();
+    }*/
+
+    document.getElementById("guess").addEventListener('keyup', (event) => {
+        /*if (event.key>='a' && event.key<='z') {
+            buscar();
+        }*/
+        if (event.key === "Enter") {
+            buscar();
+            document.getElementById('guess').value = '';
+        }
+    });
+</script>
+</body>
+</html>
