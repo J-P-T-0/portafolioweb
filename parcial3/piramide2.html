@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pirámide 2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script type="text/javascript" src="jspdf/js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="jspdf/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.js"></script>
+
+    <script type="text/javascript" src="jspdf/jspdf.plugin.addimage.js"></script>
+
+    <script type="text/javascript" src="jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.plugin.from_html.js"></script>
+</head>
+<body>
+<div>
+    <form id="formu" onsubmit="return algo();" action="javascript:void(0)">
+        <p>Número de filas</p>
+        <input type="number" size="5" id="val">
+        <p>Caracter</p>
+        <input type="text" size="5" id="chara" maxlength="1">
+        <input type="submit">
+    </form>
+</div>
+
+<iframe width="500" height="500" style="margin-top: 20px;"></iframe>
+
+<script type="text/javascript">
+
+    function algo(){
+
+        var doc = new jsPDF();
+        let filas=40;
+        let columnas=40;
+        let columnas1=40;
+        let vuelta=0;
+        let num= parseInt(document.forms[0].val.value);
+        let caracter=document.forms[0].chara.value;
+        doc.setFontSize(20);
+        for(let i=1; i<=num; i++){
+            vuelta=0;
+            filas=40+(i*5);
+            columnas1=40;
+            for(let z=num; i<z ;z--){
+                vuelta++;
+                columnas1=40+vuelta*2.5;
+                doc.text(columnas1, filas, " ");
+            }
+            for(let j=1; j<=i; j++){
+                columnas=columnas1+(j*5);
+                doc.text(columnas, filas, caracter);
+            }
+        }
+        //doc.text(40, 40, "Nombre");
+        var string = doc.output('datauristring');
+        $('iframe').attr('src', string);
+
+
+        return true;
+    }
+</script>
+</body>
+</html>

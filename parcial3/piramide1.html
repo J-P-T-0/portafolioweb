@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Pirámides</title>
+        <title>Pirámide 1</title>
         <meta charset="UTF-8">
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
@@ -28,26 +28,26 @@
             </form>
         </div>
         
-        <iframe width="500" height="500" style="margin-top: 20px;">
+        <iframe width="500" height="500" style="margin-top: 20px;"></iframe>
         
             <script type="text/javascript">
 
                 function algo(){
                     
                     var doc = new jsPDF();
-                    let filas=0;
-                    let columnas=0;
+                    let filas=40;
+                    let columnas=40;
                     let num= parseInt(document.forms[0].val.value);
                     let caracter=document.forms[0].chara.value;
                     doc.setFontSize(20);
-                    /*for(let i=1; i<=num; i++){
-                        filas=40+i;
-                        for(let j=1; j<=num; j++){
-                            columnas=40+j;
-                            doc.text(columnas, filas, "*");
+                    for(let i=1; i<=num; i++){
+                        filas=40+(i*5);
+                        for(let j=1; j<=i; j++){
+                            columnas=40+(j*5);
+                            doc.text(columnas, filas, caracter);
                         }
-                    }*/
-                    doc.text(40, 40, "Nombre");
+                    }
+                    //doc.text(40, 40, "Nombre");
                     var string = doc.output('datauristring');
                     $('iframe').attr('src', string);
                     
