@@ -8,9 +8,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!--estas son las librerías para el pdf-->
+	<script type="text/javascript" src="jspdf/js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="jspdf/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.js"></script>
+
+	<script type="text/javascript" src="jspdf/jspdf.plugin.addimage.js"></script>
+
+	<script type="text/javascript" src="jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.plugin.from_html.js"></script>
+	
 	<script type="text/javascript">
+		var suma= 0;
+		var doc= new jsPDF;
+		var fase="";
+		var nombre="";
 		function resultados() {
-			var suma= 0;
 			var id;
 			for(let i=1; i<=21; i++){
 				id="p"+i;
@@ -19,36 +33,59 @@
 			//suma = parseInt(document.querySelector("form input[name='p1']").value);
 			//suma = parseInt(document.forms[0].p1.value);
 
-			alert("Resultado: "+ suma);
+			alert("Resultado: "+ suma); 
 			
+			nombre=prompt("Cuál es su nombre?");
+			nombre ? nombre:"ninguno";
 			//INDICE DE VIOLENCIA FEMINICIDA
 			//0-12 FASE DE APERTURA
 			if(suma<=12){
 				alert("FASE DE APERTURA");
+				fase="FASE DE APERTURA";
 			}
 			//13-24 FASE DE DOMINIO
 			if(suma>=13&&suma<=24){
 				alert("FASE DE DOMINIO");
+				fase="FASE DE DOMINIO";
 			}
 			//25-36 FASE DE DEMOSTRACION
 			if(suma>=25&&suma<=36){
 				alert("FASE DE DEMOSTRACION");
+				fase="FASE DE DEMOSTRACION";
 			}
 			//37-48 FASE DE RECONOCIMIENTO
 			if(suma>=37&&suma<=48){
 				alert("FASE DE RECONOCIMIENTO");
+				fase="FASE DE RECONOCIMIENTO";
 			}
 			//49-60 FASE DE RIESGO INMINENTE
 			if(suma>=49&&suma<=60){
 				alert("FASE DE RIESGO INMINENTE");
+				fase="FASE DE RIESGO INMINENTE";
 			}
 			//61    CONSUMACION
 			if(suma>=61){
 				alert("CONSUMACION");
+				fase="CONSUMACION";
 			}		
-
+			impresion();
 			return true;
-		}  
+		}
+
+		function impresion(){
+			document.write("<iframe frameborder='0' width='500' height='400'></iframe>");
+			$(document).ready(function(){
+			doc.setFontSize(20);
+			doc.text(40,20,"Resultados de la encuesta");
+			doc.text(50,40,"Suma total: "+suma);
+			doc.text(50,45,"Fase: "+fase);
+			doc.text(50,50,"Su nombre es: "+nombre);
+
+			var string = doc.output('datauristring');
+			$('iframe').attr('src', string);
+			});
+			
+		}
 	</script>
 </head>
 
@@ -175,7 +212,6 @@
 		<br>
 		<input type="submit" class="btn btn-primary"></p>
 	</form>
-
 
 </body>
 
