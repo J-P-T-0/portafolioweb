@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Examen práctico parcial 3</title>
+        <meta charset="UTF-8">
+
+        <script type="text/javascript" src="jspdf/js/jquery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="jspdf/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+        <script type="text/javascript" src="jspdf/jspdf.js"></script>
+
+        <script type="text/javascript" src="jspdf/jspdf.plugin.addimage.js"></script>
+
+        <script type="text/javascript" src="jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+        <script type="text/javascript" src="jspdf/jspdf.plugin.split_text_to_size.js"></script>
+        <script type="text/javascript" src="jspdf/jspdf.plugin.from_html.js"></script>
+    </head>
+    <body>
+        <h1>Encriptador de regla desconocida</h1>
+        <form onsubmit="return encriptar();" action="javascript:void(0)">
+            <p>Escriba el mensaje que guste encriptar (máximo 100 carateres): </p>
+            <textarea name="mensaje" id="mensaje" rows="5" cols="60" placeholder="Su texto aquí" maxlength="100"></textarea><br>
+            <label id="counter">0 de 100</label><br><br>
+            <input type="submit"><br>
+            <p id="alerta"></p><br>
+        </form><br>
+        <iframe width="500" height="500"></iframe>
+
+        <script type="text/javascript">
+
+            $(document).on('keydown', function() {
+                let wordcounter;
+                let texto=document.forms[0].mensaje.value;
+                $('textarea').focus();
+                wordcounter= texto.length;
+                document.getElementById("counter").innerHTML=wordcounter+" de 100";
+            });
+            function encriptar(){
+                let textoi=document.forms[0].mensaje.value;
+                let textoencript= [];
+                let texto;
+                let clave= ['I','C','Ñ','H','O','M','T','L','B','S','A','R','Q','P','E','W','J','F','V','U','K','X','D','Y','N','Z','G'];
+                let textoencriptcadena="";
+                if(textoi.length===0){
+                    document.getElementById("alerta").innerHTML="Tiene que ingresar al menos una letra!";
+                }else{
+                    texto=textoi.toUpperCase();
+                    for(let i=0; i<texto.length; i++){
+                        if(texto[i]==='0'||texto[i]==='1'||texto[i]==='2'||texto[i]==='3'||texto[i]==='4'||texto[i]==='5'||texto[i]==='6'||texto[i]==='7'||texto[i]==='8'||texto[i]==='9'){
+                            document.getElementById("alerta").innerHTML="No puede tener números!";
+                            return false;
+                        }
+                        switch (texto[i]){
+                            case 'A':
+                                textoencript[i]=clave[0];
+                                break;
+                            case 'B':
+                                textoencript[i]=clave[1];
+                                break;
+                            case 'C':
+                                textoencript[i]=clave[2];
+                                break;
+                            case 'D':
+                                textoencript[i]=clave[3];
+                                break;
+                            case 'E':
+                                textoencript[i]=clave[4];
+                                break;
+                            case 'F':
+                                textoencript[i]=clave[5];
+                                break;
+                            case 'G':
+                                textoencript[i]=clave[6];
+                                break;
+                            case 'H':
+                                textoencript[i]=clave[7];
+                                break;
+                            case 'I':
+                                textoencript[i]=clave[8];
+                                break;
+                            case 'J':
+                                textoencript[i]=clave[9];
+                                break;
+                            case 'K':
+                                textoencript[i]=clave[10];
+                                break;
+                            case 'L':
+                                textoencript[i]=clave[11];
+                                break;
+                            case 'M':
+                                textoencript[i]=clave[12];
+                                break;
+                            case 'N':
+                                textoencript[i]=clave[13];
+                                break;
+                            case 'Ñ':
+                                textoencript[i]=clave[14];
+                                break;
+                            case 'O':
+                                textoencript[i]=clave[15];
+                                break;
+                            case 'P':
+                                textoencript[i]=clave[16];
+                                break;
+                            case 'Q':
+                                textoencript[i]=clave[17];
+                                break;
+                            case 'R':
+                                textoencript[i]=clave[18];
+                                break;
+                            case 'S':
+                                textoencript[i]=clave[19];
+                                break;
+                            case 'T':
+                                textoencript[i]=clave[20];
+                                break;
+                            case 'U':
+                                textoencript[i]=clave[21];
+                                break;
+                            case 'V':
+                                textoencript[i]=clave[22];
+                                break;
+                            case 'W':
+                                textoencript[i]=clave[23];
+                                break;
+                            case 'X':
+                                textoencript[i]=clave[24];
+                                break;
+                            case 'Y':
+                                textoencript[i]=clave[25];
+                                break;
+                            case 'Z':
+                                textoencript[i]=clave[26];
+                                break;
+                            default:
+                                textoencript[i]=" ";
+                                break;
+                        }
+                    }
+                    for(let i=0; i<texto.length; i++){
+                        textoencriptcadena=textoencriptcadena+textoencript[i];
+                    }
+                    imprimir(textoi,textoencriptcadena);
+                    return true;
+                }
+            }
+            function imprimir(textoi,textoencriptcadena){
+                var doc = new jsPDF();
+                doc.setFontSize(15);
+                doc.text(20,20,"Texto original: "+textoi.substring(0,40));
+                doc.text(30,30,"                "+textoi.substring(40,80));
+                doc.text(30,40,"                "+textoi.substring(80,100));
+                doc.text(20,60,"Texto encriptado: "+ textoencriptcadena.substring(0,40));
+                doc.text(30,70,"                  "+ textoencriptcadena.substring(40,80));
+                doc.text(30,80,"                  "+ textoencriptcadena.substring(80,100));
+                var string = doc.output('datauristring');
+                $('iframe').attr('src', string);
+
+                return true;
+            }
+
+        </script>
+    </body>
+</html>
