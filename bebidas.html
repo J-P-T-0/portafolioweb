@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Recetas saludables</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq41d53992ca84c89684922199b44f7aafb4a91d15c740d7c4f8c4504c78df6493" defer></script>
+
+    <style>
+        .bajar{position:absolute;right:30px;top:70%;z-index:11;animation:action 1s infinite alternate}@keyframes action{0%{transform:translateY(0)}100%{transform:translateY(-15px)}}
+        .izqder{position:absolute;left:50%;animation:action1 1s infinite alternate}@keyframes action1{0%{transform:translateX(0)}100%{transform:translateX(-15px)}}
+
+
+        @media (max-width: 991.98px){
+            .bajar{
+                display: none;
+            }
+        }
+
+        .col-lg-6-ver1{flex:0 0 50%;max-width:90%}
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 10; /* Sit on top */
+            padding-top: 7rem; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 90%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+            color: #da9f5b;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 20px 16px;
+            background-color: #33211d;
+            margin-bottom: 4rem;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            background-color: #33211d;
+            position: fixed;
+            bottom: 2rem;
+            width: inherit;
+            margin-left: -9px;
+            height: 3rem;
+        }
+    </style>
+</head>
+
+<body onscroll="navegador()">
+<!-- Navbar Start -->
+<div  class="container-fluid p-0 nav-bar">
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+            <h1 class="m-0 display-4 text-uppercase text-white">Recetas saludables</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" id="sidemenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarCollapse" style="height: 0; overflow: hidden; width: 0">
+            <a href="index.html" class="nav-item nav-link ">Inicio</a>
+            <a href="sencillos.html" class="nav-item nav-link ">Recetas sencillas</a>
+            <a href="carnes.html" class="nav-item nav-link ">Recetas con carnes</a>
+            <a href="postres.html" class="nav-item nav-link">Postres</a>
+            <a href="bebidas.html" class="nav-item nav-link active">Bebidas</a>
+            <a href="contri.html" class="nav-item nav-link">Contribuir</a>
+        </div>
+        <div class="collapse navbar-collapse justify-content-between" id="c" style="position: fixed; background-color: #33211d; overflow: hidden;height: 0; transition: height 0.7s; width: 100%; margin-left: -20px; margin-top: -10px">
+            <div class="navbar-nav ml-auto p-4">
+                <a href="index.html" class="nav-item nav-link ">Inicio</a>
+                <a href="sencillos.html" class="nav-item nav-link ">Recetas sencillas</a>
+                <a href="carnes.html" class="nav-item nav-link ">Recetas con carnes</a>
+                <a href="postres.html" class="nav-item nav-link">Postres</a>
+                <a href="bebidas.html" class="nav-item nav-link active">Bebidas</a>
+                <a href="contri.html" class="nav-item nav-link">Contribuir</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 position-relative overlay-bottom" id="a">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Bebidas</h1>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Menu Start -->
+<div class="container-fluid pt-5">
+    <div class="container" style="padding-top: 10%">
+        <div class="section-title">
+            <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Init</h4>
+            <h1 class="display-4">Lo más popular</h1>
+        </div>
+        <!-- The Modal -->
+        <div id="popup1" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #da9f5b">Té de Manzanilla</h2>
+                    <span class="close" onclick="closePopup('popup1')">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6-ver1 mb-5">
+                        <div class="row align-items-center" >
+                            <div class="col-sm-5">
+                                <img class="img-fluid mb-3 mb-sm-0" src="img/temanzanilla.jpeg" alt="">
+                            </div>
+                            <div class="col-sm-7" >
+                                <h4><i class="fa fa-coffee service-icon"></i>Ingredientes</h4>
+                                <ul>
+                                    <li>2 cucharaditas de flores de manzanilla secas</li>
+                                    <li>2 tazas de agua</li>
+                                    <li>Miel al gusto (opcional)</li>
+                                </ul>
+                                <h4>Instrucciones</h4>
+                                <ol>
+                                    <li>Hierve las 2 tazas de agua en una cacerola.</li>
+                                    <li>Añade las flores de manzanilla y retira del fuego.</li>
+                                    <li>Deja reposar durante 5-7 minutos.</li>
+                                    <li>Cuela el té en una taza.</li>
+                                    <li>Añade miel al gusto si lo deseas.</li>
+                                    <li>Sírvelo caliente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="popup2" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #da9f5b">Té de Menta</h2>
+                    <span class="close" onclick="closePopup('popup2')">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6-ver1 mb-5">
+                        <div class="row align-items-center" >
+                            <div class="col-sm-5">
+                                <img class="img-fluid mb-3 mb-sm-0" src="img/te%20menta.jpeg" alt="">
+                            </div>
+                            <div class="col-sm-7" >
+                                <h4><i class="fa fa-coffee service-icon"></i>Ingredientes</h4>
+                                <ul>
+                                    <li>1 puñado de hojas de menta fresca</li>
+                                    <li>2 tazas de agua</li>
+                                    <li>Miel o azúcar al gusto (opcional)</li>
+                                </ul>
+                                <h4>Instrucciones</h4>
+                                <ol>
+                                    <li>Hierve las 2 tazas de agua en una cacerola.</li>
+                                    <li>Añade las hojas de menta fresca y retira del fuego.</li>
+                                    <li>Deja reposar durante 5-7 minutos.</li>
+                                    <li>Cuela el té en una taza.</li>
+                                    <li>Añade miel o azúcar al gusto si lo deseas.</li>
+                                    <li>Sírvelo caliente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="popup3" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #da9f5b">Té de Jengibre y Limón</h2>
+                    <span class="close" onclick="closePopup('popup3')">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6-ver1 mb-5">
+                        <div class="row align-items-center" >
+                            <div class="col-sm-5">
+                                <img class="img-fluid mb-3 mb-sm-0" src="img/service-3-b.jpeg" alt="">
+                            </div>
+                            <div class="col-sm-7" >
+                                <h4><i class="fa fa-coffee service-icon"></i>Ingredientes</h4>
+                                <ul>
+                                    <li>1 trozo de jengibre fresco (aproximadamente 2 cm), pelado y cortado en rodajas</li>
+                                    <li>1 limón, en rodajas</li>
+                                    <li>2 tazas de agua</li>
+                                    <li>Miel al gusto (opcional)</li>
+                                </ul>
+                                <h4>Instrucciones</h4>
+                                <ol>
+                                    <li>Hierve las 2 tazas de agua en una cacerola.</li>
+                                    <li>Añade las rodajas de jengibre y reduce el fuego. Deja hervir a fuego lento durante 10 minutos.</li>
+                                    <li>Retira del fuego y añade las rodajas de limón.</li>
+                                    <li>Deja reposar durante 5 minutos.</li>
+                                    <li>Cuela el té en una taza y añade miel al gusto si lo deseas.</li>
+                                    <li>Sírvelo caliente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="popup4" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #da9f5b">Tacos de Lechuga con Pollo y Aguacate</h2>
+                    <span class="close" onclick="closePopup('popup4')">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6-ver1 mb-5">
+                        <div class="row align-items-center" >
+                            <div class="col-sm-5">
+                                <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="">
+                            </div>
+                            <div class="col-sm-7" >
+                                <h4><i class="fa fa-coffee service-icon"></i>Ingredientes</h4>
+                                <ul>
+                                    <li>1 taza de espinacas frescas</li>
+                                    <li>1 plátano maduro</li>
+                                    <li>1 manzana, cortada en cubos</li>
+                                    <li>1/2 taza de yogur natural</li>
+                                    <li>1/2 taza de agua o leche de almendras</li>
+                                    <li>Jugo de 1/2 limón</li>
+                                    <li>1 cucharadita de miel (opcional)</li>
+                                </ul>
+                                <h4>Instrucciones</h4>
+                                <ol>
+                                    <li>Lava bien las espinacas.</li>
+                                    <li>Pela el plátano y córtalo en trozos.</li>
+                                    <li>Corta la manzana en cubos, quitando el corazón.</li>
+                                    <li>En una licuadora, agrega las espinacas, el plátano, la manzana y el yogur natural.</li>
+                                    <li>Vierte el agua o la leche de almendras en la licuadora.</li>
+                                    <li>Exprime el jugo de medio limón en la mezcla.</li>
+                                    <li>Si deseas, añade una cucharadita de miel para endulzar.</li>
+                                    <li>Licúa todos los ingredientes hasta obtener una mezcla suave y homogénea.</li>
+                                    <li>Vierte el batido en un vaso y sirve inmediatamente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="popup5" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #da9f5b">Tacos de Lechuga con Pollo y Aguacate</h2>
+                    <span class="close" onclick="closePopup('popup5')">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6-ver1 mb-5">
+                        <div class="row align-items-center" >
+                            <div class="col-sm-5">
+                                <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="">
+                            </div>
+                            <div class="col-sm-7" >
+                                <h4><i class="fa fa-coffee service-icon"></i>Ingredientes</h4>
+                                <ul>
+                                    <li>1 taza de espinacas frescas</li>
+                                    <li>1 plátano maduro</li>
+                                    <li>1 manzana, cortada en cubos</li>
+                                    <li>1/2 taza de yogur natural</li>
+                                    <li>1/2 taza de agua o leche de almendras</li>
+                                    <li>Jugo de 1/2 limón</li>
+                                    <li>1 cucharadita de miel (opcional)</li>
+                                </ul>
+                                <h4>Instrucciones</h4>
+                                <ol>
+                                    <li>Lava bien las espinacas.</li>
+                                    <li>Pela el plátano y córtalo en trozos.</li>
+                                    <li>Corta la manzana en cubos, quitando el corazón.</li>
+                                    <li>En una licuadora, agrega las espinacas, el plátano, la manzana y el yogur natural.</li>
+                                    <li>Vierte el agua o la leche de almendras en la licuadora.</li>
+                                    <li>Exprime el jugo de medio limón en la mezcla.</li>
+                                    <li>Si deseas, añade una cucharadita de miel para endulzar.</li>
+                                    <li>Licúa todos los ingredientes hasta obtener una mezcla suave y homogénea.</li>
+                                    <li>Vierte el batido en un vaso y sirve inmediatamente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="popup6" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color: #da9f5b">Tacos de Lechuga con Pollo y Aguacate</h2>
+                    <span class="close" onclick="closePopup('popup6')">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-6-ver1 mb-5">
+                        <div class="row align-items-center" >
+                            <div class="col-sm-5">
+                                <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="">
+                            </div>
+                            <div class="col-sm-7" >
+                                <h4><i class="fa fa-coffee service-icon"></i>Ingredientes</h4>
+                                <ul>
+                                    <li>1 taza de espinacas frescas</li>
+                                    <li>1 plátano maduro</li>
+                                    <li>1 manzana, cortada en cubos</li>
+                                    <li>1/2 taza de yogur natural</li>
+                                    <li>1/2 taza de agua o leche de almendras</li>
+                                    <li>Jugo de 1/2 limón</li>
+                                    <li>1 cucharadita de miel (opcional)</li>
+                                </ul>
+                                <h4>Instrucciones</h4>
+                                <ol>
+                                    <li>Lava bien las espinacas.</li>
+                                    <li>Pela el plátano y córtalo en trozos.</li>
+                                    <li>Corta la manzana en cubos, quitando el corazón.</li>
+                                    <li>En una licuadora, agrega las espinacas, el plátano, la manzana y el yogur natural.</li>
+                                    <li>Vierte el agua o la leche de almendras en la licuadora.</li>
+                                    <li>Exprime el jugo de medio limón en la mezcla.</li>
+                                    <li>Si deseas, añade una cucharadita de miel para endulzar.</li>
+                                    <li>Licúa todos los ingredientes hasta obtener una mezcla suave y homogénea.</li>
+                                    <li>Vierte el batido en un vaso y sirve inmediatamente.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="mb-5">Calientes</h1>
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-3">
+                        <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/temanzanilla.jpeg" alt="">
+                        <h5 class="menu-price">X</h5>
+                    </div>
+                    <div class="col-8 col-sm-9">
+                        <h4>Té de Manzanilla</h4>
+                        <button onclick="openPopup('popup1')">Vista previa</button>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-3">
+                        <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/te%20menta.jpeg" alt="">
+                        <h5 class="menu-price">X</h5>
+                    </div>
+                    <div class="col-8 col-sm-9">
+                        <h4>Té de Menta</h4>
+                        <button onclick="openPopup('popup2')">Vista previa</button>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-3">
+                        <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/service-3-b.jpeg" alt="">
+                        <h5 class="menu-price">X</h5>
+                    </div>
+                    <div class="col-8 col-sm-9">
+                        <h4>Té de Jengibre y Limón</h4>
+                        <button onclick="openPopup('popup3')">Vista previa</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="mb-5">Frías</h1>
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-3">
+                        <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
+                        <h5 class="menu-price">X</h5>
+                    </div>
+                    <div class="col-8 col-sm-9">
+                        <h4>Batido Verde Energético</h4>
+                        <button onclick="openPopup('popup4')">Vista previa</button>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-3">
+                        <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
+                        <h5 class="menu-price">$5</h5>
+                    </div>
+                    <div class="col-8 col-sm-9">
+                        <h4>Black Coffee</h4>
+                        <button onclick="openPopup('popup5')">Vista previa</button>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-4 col-sm-3">
+                        <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
+                        <h5 class="menu-price">$5</h5>
+                    </div>
+                    <div class="col-8 col-sm-9">
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Menu End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-4 py-0 py-lg-5" style="margin-left: 12%; margin-top: 4rem">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contactos</h4>
+                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>recetass@example.com</p>
+            </div>
+            <div class="py-0 py-lg-5 " style="margin-left: 15%; margin-top: 4rem">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horas de servicio</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                    <p>2.00 PM - 8.00 PM</p>
+                    <h6 class="text-white text-uppercase">Saturday</h6>
+                    <p>2.00 PM - 5.00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Domain</a>. All Rights Reserved.</a></p>
+            <p class="m-0 text-white">Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a></p>
+            <p class="m-0 text-white"> Web editor: Julieta P.</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/tempusdominus/js/moment.min.js"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+
+<script>
+    document.getElementById("sidemenu").addEventListener("click", sidemenu);
+    let init=true;
+    function navegador() {
+        if (window.scrollY >= document.getElementById("a").offsetHeight){
+            document.getElementById("c").style.height = "100px";
+        }else{
+            document.getElementById("c").style.height = "0";
+        }
+    }
+    function sidemenu() {
+        if (init===true){
+            document.getElementById("navbarCollapse").style.height = "120px";
+            document.getElementById("navbarCollapse").style.width = "200px";
+            init=false;
+            return init;
+        }else{
+            document.getElementById("navbarCollapse").style.height = "0";
+            document.getElementById("navbarCollapse").style.width = "0";
+            init=true;
+            return init;
+        }
+    }
+    $(document).ready(function() {
+        $('a[href^="#algo"]').click(function() {
+            var destino = $(this.hash); //this.hash lee el atributo href de este
+            $('html, body').animate({ scrollTop: destino.offset().top }, 700); //Llega a su destino con el tiempo deseado
+            return false;
+        });
+    });
+</script>
+
+<script>
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = "block";
+    }
+
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
+    }
+
+</script>
+</body>
+
+</html>
